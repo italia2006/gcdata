@@ -50,6 +50,7 @@ names(al) <- c("activity","label")
 m <- sqldf("select subject, label from subjectActivity, al where subjectActivity.activity=al.activity")
 names(m) <- c("subject","activity")
 
+
 allDataMeanStdSubjectActivity <- cbind(m,allDataMeanStd)
 write.table(allDataMeanStdSubjectActivity,"./prj/allDataMeanStdSubjectActivity.txt")
 
@@ -59,5 +60,5 @@ write.table(allDataMeanStdSubjectActivity,"./prj/allDataMeanStdSubjectActivity.t
 allDataMeanStdSubjectActivity <- as.data.table(allDataMeanStdSubjectActivity)
 allMeans <- allDataMeanStdSubjectActivity[, lapply(.SD, mean), by=c("subject","activity")]
 allMeans <- arrange(allMeans,subject)
-write.table(allMeans,"./prj/allDataMeanStdSubjectActivity.txt")
+write.table(allMeans,"./prj/allMeansOnly.txt")
 
