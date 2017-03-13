@@ -3,6 +3,7 @@ title: "Getting and Cleaning Data"
 output: html_document
 ---
 
+Here are the various steps taken by the run_analysis.R script
 
 #### Cleaning data from wearable computing
 
