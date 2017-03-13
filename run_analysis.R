@@ -60,5 +60,5 @@ write.table(allDataMeanStdSubjectActivity,"./prj/allDataMeanStdSubjectActivity.t
 allDataMeanStdSubjectActivity <- as.data.table(allDataMeanStdSubjectActivity)
 allMeans <- allDataMeanStdSubjectActivity[, lapply(.SD, mean), by=c("subject","activity")]
 allMeans <- arrange(allMeans,subject)
-write.table(allMeans,"./prj/allMeansOnly.txt")
+write.table(allMeans,"./prj/allMeansOnly.txt",row.name=FALSE)
 
